@@ -19,8 +19,16 @@
 			<p>
 				web page is ..
 			</p>
-			<input type="button" value="hi" onclick="alert('hi')">
-			<input type="text" onchange="alert('changed')">
+			<input type="button" value="night" onclick="
+			document.querySelector('body').style.backgroundColor = 'black';
+			document.querySelector('body').style.color = 'white';
+			document.querySelector('a').style.color = 'white';
+			">
+			<input type="button" value="day" onclick="
+			document.querySelector('body').style.backgroundColor = 'white';
+			document.querySelector('body').style.color = 'black';
+			document.querySelector('a').style.color = 'black';
+			">
 		</div>
 	</div>
 	</body>
