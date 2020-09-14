@@ -1,40 +1,41 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html>
   <head>
     <meta charset="utf-8">
     <title></title>
   </head>
   <body>
-    <h1>function</h1>
-    <h2>basic</h2>
-    <ul>
-      <script>
-        function two(){
-          document.write('<li>2-1</li>');
-          document.write('<li>2-2</li>');
-        }
-        document.write('<li>1</li>');
-        two();
-        document.write('<li>3</li>');
-        two();
-      </script>
-    </ul>
-    <h2>Parameter & Argument</h2>
+    <h1>Object</h1>
+    <h2>create</h2>
     <script>
-      function sum(left, right) {
-        document.write(left+right+'<br>');
-      }
-      sum(2,3);
-      sum(5,7);
+      var cow = {
+        "programmer":"egoing",
+        "designer":"leezche"
+      };
+      document.write("programmer : "+cow.programmer+"<br>");
+      document.write("designer : "+cow.designer+"<br>");
+      cow.bookkeeper = "duru";
+      document.write("bookkeeper :"+cow.bookkeeper+"<br>");
+      cow["data scientist"] = "taeho";
+      document.write("data scientist :"+cow["data scientist"]+"<br>");
+      document.write(cow);
     </script>
-    <h2>Return</h2>
+
+    <h2>Iterate</h2>
     <script>
-      function sum2(left, right) {
-        return left+right;
+      for (var key in cow) {
+        document.write(key+':'+cow[key]+'<br>');
       }
-      document.write(sum(2,3)+'<br>');
-      document.write('<div style="color:red">'+sum(3,5)+'</div>');
-      document.write('<div style="font-size:3rem">'+sum(8,11)+'</div>');
+    </script>
+    <h2>Property & Method</h2>
+    <script>
+      cow.showAll = function() {
+        for (var key in this) {
+          document.write(key+':'+this[key]+'<br>');
+        }
+
+      }
+      cow.showAll();
     </script>
   </body>
 </html>
